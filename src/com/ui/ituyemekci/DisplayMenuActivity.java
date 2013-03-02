@@ -1,4 +1,6 @@
-package com.example.ituyemekci;
+package com.ui.ituyemekci;
+
+import com.example.ituyemekci.R;
 
 import android.app.Activity;
 import android.content.Intent;

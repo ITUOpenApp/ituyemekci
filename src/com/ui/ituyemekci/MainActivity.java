@@ -1,9 +1,11 @@
-package com.example.ituyemekci;
+package com.ui.ituyemekci;
 
 import java.net.URL;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+
+import com.example.ituyemekci.R;
 
 import android.app.Activity;
 import android.content.Intent;
