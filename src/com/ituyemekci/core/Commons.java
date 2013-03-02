@@ -1,8 +1,8 @@
 package com.ituyemekci.core;
 
 public final class Commons {
-	public static String ConnectionError = "Baðlantý problemi.";
-	public static String DemandingConnection = "Baðlanýlýyor.";
+	public static String ConnectionError = "BaÄŸlantÄ± problemi.";
+	public static String DemandingConnection = "BaÄŸlanÄ±lÄ±yor.";
 	public static String SKSUrl = "http://www.sks.itu.edu.tr/";
 	public static String JsoupQuery = "div#rightcolumn  td.mod_events_latest_first";
 	public static String OnCreateLogMessage = "Created Application.";
