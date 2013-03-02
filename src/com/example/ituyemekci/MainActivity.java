@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 		Log.v("kod","test");
 		//setContentView(R.layout.activity_main);
 
-		String title="...";
+		String title="String title...";
 		
 	    // Create the text view
 	    TextView textView = new TextView(this);
@@ -59,8 +59,8 @@ public class MainActivity extends Activity {
 	
 	public void sendMessage(String message) {
 	    Intent intent = new Intent(this, DisplayMenuActivity.class);
-	    
 	    intent.putExtra("menu_content", message);
+	    
 	    startActivity(intent);
 	}
 	
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 		protected String doInBackground(String... params) {
 			//int count = urls.length;
 			String url=params[0];
-			String menu_content="baðlanamadý..";
+			String menu_content="Yemedi Haci Daha Sonra Tekrar Dene..";
 			try {
 				
 				Document doc = Jsoup.connect("http://www.sks.itu.edu.tr/").timeout(0).get();
