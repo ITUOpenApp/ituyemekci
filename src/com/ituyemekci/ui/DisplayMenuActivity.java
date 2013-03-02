@@ -1,4 +1,4 @@
-package com.ui.ituyemekci;
+package com.ituyemekci.ui;
 
 import com.example.ituyemekci.R;
 
