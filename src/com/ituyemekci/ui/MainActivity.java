@@ -14,18 +14,20 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	public TextView textView;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.v("kod", Commons.OnCreateLogMessage);
 
 		// Create the text view
-		TextView textView = new TextView(this);
-		textView.setTextSize(40);
+		this.textView = new TextView(this);
+		this.textView.setTextSize(30);
 
 		new ParseTask().execute();
 		// Set the text view as the activity layout
-		setContentView(textView);
+		setContentView(this.textView);
 	}
 
 	protected void onResume() {
@@ -47,7 +49,8 @@ public class MainActivity extends Activity {
 
 	private class ParseTask extends AsyncTask<Void, Void, String> {
 		protected void onPostExecute(String result) {
-			sendMessage(result);
+			//sendMessage(result);
+			MainActivity.this.textView.setText(result);
 		}
 
 		@Override
