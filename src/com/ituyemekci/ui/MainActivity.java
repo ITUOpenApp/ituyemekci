@@ -1,20 +1,23 @@
 package com.ituyemekci.ui;
 
-import com.example.ituyemekci.R;
-import com.ituyemekci.core.Commons;
-import com.ituyemekci.parser.HtmlParser;
-
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.ituopenapp.ituyemekci.R;
+import com.ituyemekci.core.Commons;
+import com.ituyemekci.parser.HtmlParser;
 
 public class MainActivity extends Activity {
 
 	public TextView textView;
+	public ImageView logo;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +28,23 @@ public class MainActivity extends Activity {
 		this.textView = new TextView(this);
 		this.textView.setTextSize(30);
 
+		//Create image view
+		try {
+			Drawable d = Drawable.createFromStream(getAssets().open("ituopenapp_logo.png"), null);
+			this.logo = new ImageView(this);  //(ImageView) findViewById(R.id.full_image_view);
+			this.logo.setImageDrawable(d);
+		}catch(Exception e) {
+			Log.v("kod", e.toString());
+		}
+		
+
+		this.logo.setScaleType(ImageView.ScaleType.CENTER_CROP  );
+		setContentView(this.logo);
+		
+		
 		new ParseTask().execute();
 		// Set the text view as the activity layout
-		setContentView(this.textView);
+		//setContentView(this.textView);
 	}
 
 	protected void onResume() {
@@ -51,6 +68,7 @@ public class MainActivity extends Activity {
 		protected void onPostExecute(String result) {
 			//sendMessage(result);
 			MainActivity.this.textView.setText(result);
+			MainActivity.this.setContentView(MainActivity.this.textView);
 		}
 
 		@Override
