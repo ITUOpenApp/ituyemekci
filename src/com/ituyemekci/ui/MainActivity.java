@@ -2,6 +2,7 @@ package com.ituyemekci.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 
 import com.ituopenapp.ituyemekci.R;
 import com.ituyemekci.core.Commons;
-import com.ituyemekci.parser.HtmlParser;
+import com.ituyemekci.parser.JsonParser;
 
 public class MainActivity extends Activity {
 
@@ -50,6 +51,13 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	  super.onConfigurationChanged(newConfig);
+	  setContentView(MainActivity.this.textView);
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,7 +81,7 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected String doInBackground(Void... params) {
-			return HtmlParser.getContent();
+			return JsonParser.getContent();
 		}
 	}
 }

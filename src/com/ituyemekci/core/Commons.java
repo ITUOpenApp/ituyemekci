@@ -7,5 +7,6 @@ public final class Commons {
 	public static String JsoupQueryDate = "div#rightcolumn  td.mod_events_latest_first p";
 	public static String JsoupQueryMenu = "div#rightcolumn  td.mod_events_latest_first ul>li";
 	public static String OnCreateLogMessage = "Created Application.";
+	public static String JsonApiUrl = "http://yemekci.apps.itusenlikci.com/api/1";
 	
 }
